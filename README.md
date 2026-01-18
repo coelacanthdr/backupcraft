@@ -61,13 +61,19 @@ A robust Bash script for automatically backing up your Minecraft server on macOS
 
 ## Quick Setup Guide
 
+0. **Setup your minecraft server**
+
+- Follow the instructions online to create a minecraft server and place that server somewhere other than your documents, desktop or downloads folder.
+- Successfully join the world--this will create the world folder, a blank whitelist and default server.properties file.
+- Setup your whitelist for the server--if you don't do this, not only will you be more vulnerable to attacks but also the server.properties file in the archive will not let you join the server anymore!
+- Replace your server.properties file with the one in this archive and rename your server using "motd=your server name" and reconfigure anything else you like except the rcon settings.
+  
 1. **Clone the repository**
 ~~~
 git clone https://github.com/coelacanthdr/backupcraft.git
 cd minecraft-backup
 chmod +x mc_backup.sh
 ~~~
-
 2. **Edit the script to set your server paths, RCON credentials, and iCloud settings**  
 
 ### Quick Setup Cheat Sheet
