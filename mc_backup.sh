@@ -187,10 +187,10 @@ if [ "$(date +%H)" = "00" ]; then
 fi
 
 ############################
-# Weekly backup (Sunday 07:00)
+# Weekly backup (Sunday 02:00)
 ############################
 
-if [ "$(date +%u)" = "7" ] && [ "$(date +%H)" = "07" ]; then
+if [ "$(date +%u)" = "7" ] && [ "$(date +%H)" = "02" ]; then
     BACKUPFILE="$WEEKLY/world_$NOW.tar.gz"
 
     pax -w -z -f "$BACKUPFILE" "$WORLD" 2> "$BACKUPROOT/pax_error.log"
