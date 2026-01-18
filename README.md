@@ -1,6 +1,6 @@
 # Minecraft Backup Script (macOS)
 
-A robust Bash script for automatically backing up your Minecraft server on macOS. Supports multi-tier backups (hourly, daily, weekly, monthly), RCON integration for safe backups, error reporting, and optional offsite iCloud backups.
+A robust Bash script for automatically backing up your Minecraft server on macOS. Supports multi-tier backups (hourly, daily, weekly, monthly), RCON integration for safe backups, error reporting, and optional offsite iCloud backups. The intent is for this to be automated with launchd (below) to run every hour as cron is not well supported on macOS. Yes, I know that the use case here is people who have an old mac and want to dedicate it to a family minecraft server and don't want to convert it to Unix/Linux.  That's OK and what I was doing for, well, um...reasons.  I thought this would help a lot of people who try to do this and wind up with griefed worlds and crying kids because they failed to whitelist and never remember to backup their files or have the old mac die on them, get flooded or catch on fire.
 
 ---
 
@@ -44,7 +44,8 @@ A robust Bash script for automatically backing up your Minecraft server on macOS
 
 **General Security:**  
 - Always ensure backups and logs are in a secure location, preferably outside system-protected folders.  
-- Never commit your RCON password or server credentials to public repositories.  
+- Never commit your RCON password or server credentials to public repositories--treat it like an admin password.
+- Consider using other ports as most scanners just look at the defaults.
 
 ---
 
@@ -52,7 +53,9 @@ A robust Bash script for automatically backing up your Minecraft server on macOS
 
 - macOS with Bash  
 - [rcon-cli](https://github.com/Tiiffi/rcon-cli) installed (default path: `/usr/local/bin/rcon-cli`)  
-- Access to Minecraft server RCON port  
+- Access to Minecraft server RCON port
+- know how to find the terminal in macOS and what it is used for
+- A functioning minecraft server and know how to edit server.properties to enable rcon and set rcon password, port and ip
 
 ---
 
